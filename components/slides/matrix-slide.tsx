@@ -54,7 +54,7 @@ function Cell({
       {active && (
         <span
           key={`${row}-${col}-ripple`}
-          className="pointer-events-none absolute bottom-[1.8cqw] left-1/2 h-[6cqw] w-[6cqw] rounded-full [animation:ripple_0.9s_ease-out]"
+          className="pointer-events-none absolute bottom-[1.8cqw] left-1/2 h-[6cqw] w-[6cqw] rounded-full [animation:ripple_1.4s_ease-out_infinite]"
           style={{ border: `0.3cqh solid ${q.color}` }}
           aria-hidden="true"
         />
