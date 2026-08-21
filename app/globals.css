@@ -190,3 +190,43 @@
     transform: rotate(11deg);
   }
 }
+
+/* Slow ambient pulse for the quadrant slide background glow */
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+
+/* Self-drawing accent line under quadrant titles */
+@keyframes drawline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* One-shot light sweep across quadrant strategy titles */
+@keyframes shimmer-sweep {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* Radar sweep for the quadrant locator active cell */
+@keyframes radar-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}

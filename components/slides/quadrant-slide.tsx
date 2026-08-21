@@ -41,8 +41,18 @@ export function QuadrantSlide({ quadrant, badge }: { quadrant: Quadrant; badge: 
 
   return (
     <SlideFrame kicker={`Quadrant ${quadrant.index}`} badge={badge}>
-      <div className="flex h-full flex-col">
-        <div className="flex items-start justify-between gap-[3cqw]">
+      <div className="relative flex h-full flex-col">
+        {/* Ambient breathing glow in the quadrant's signature color */}
+        <div
+          className="pointer-events-none absolute -top-[10%] -right-[5%] h-[45cqh] w-[45cqh] rounded-full blur-[6cqh]"
+          style={{
+            background: `radial-gradient(circle, ${c}, transparent 70%)`,
+            animation: "breathe 5s ease-in-out infinite",
+          }}
+          aria-hidden="true"
+        />
+
+        <div className="relative flex items-start justify-between gap-[3cqw]">
           <div className="max-w-[75%]">
             <div className="flex items-center gap-[1.4cqw]">
               <span
@@ -58,10 +68,33 @@ export function QuadrantSlide({ quadrant, badge }: { quadrant: Quadrant; badge: 
             </div>
             <h2
               className="mt-[2.2cqh] font-display text-[4.4cqw] font-bold leading-none tracking-tight"
-              style={{ color: c, animation: "fadeup 0.5s ease-out 0.05s both" }}
+              style={{
+                color: c,
+                animation: "fadeup 0.5s ease-out 0.05s both",
+                backgroundImage: `linear-gradient(90deg, ${c} 0%, ${c} 35%, oklch(0.96 0.008 250) 50%, ${c} 65%, ${c} 100%)`,
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                animationName: "fadeup, shimmer-sweep",
+                animationDuration: "0.5s, 2.8s",
+                animationTimingFunction: "ease-out, linear",
+                animationDelay: "0.05s, 0.6s",
+                animationIterationCount: "1, 1",
+                animationFillMode: "both",
+              }}
             >
               {quadrant.strategy}
             </h2>
+            {/* Self-drawing accent line under the title */}
+            <div
+              className="mt-[1.5cqh] h-[0.4cqh] w-[10cqw] rounded-full origin-left"
+              style={{
+                background: c,
+                animation: "drawline 0.7s ease-out 0.3s both",
+              }}
+              aria-hidden="true"
+            />
             <p
               className="mt-[2cqh] max-w-[92%] text-pretty text-[1.7cqw] leading-relaxed text-muted-foreground"
               style={{ animation: "fadeup 0.5s ease-out 0.12s both" }}
@@ -73,7 +106,7 @@ export function QuadrantSlide({ quadrant, badge }: { quadrant: Quadrant; badge: 
         </div>
 
         <div
-          className="mt-[4cqh] grid flex-1 grid-cols-2 gap-x-[3cqw] gap-y-[2cqh] content-start"
+          className="relative mt-[4cqh] grid flex-1 grid-cols-2 gap-x-[3cqw] gap-y-[2cqh] content-start"
           onMouseLeave={() => setActive(null)}
         >
           {quadrant.stakeholders.map((s, i) => {
