@@ -6,15 +6,15 @@ import { SlideFrame } from "@/components/slide-frame"
 const points = [
   {
     title: "The Project",
-    body: "A digital Seat Reservation System that lets users browse availability, book, and reserve seats in real time — it comes with a hosted universal website that uses previously mapped rooms to show available seating arrangements.",
+    body: "A campus-wide classroom seat-reservation system — a BookMyShow-style seat grid for university lecture halls and classrooms. Students browse a live seat map, pick their seat, and reserve it in real time, moving from first-come-first-serve to first-book-first-serve.",
   },
   {
-    title: "The Usability",
-    body: "Organisations use the online-hosted website to register their own campus and a representative takes the initiative to map out available rooms with the easy-to-use allotment system that will be integrated into the website.",
+    title: "The Platform",
+    body: "Built as a universal, multi-tenant platform. Representative institutions like Jindal or KLU register their own campus, and a designated representative maps out lecture halls and classrooms with an easy-to-use room-allotment tool — each campus runs its own branch.",
   },
   {
     title: "The Goal",
-    body: "Instead of a sit-where-you-can system, users can plan their classes and free time to efficiently maximise their productivity. It will utilise time-tables, available rooms and an internal clock to make sure it can be universally used by any organisation.",
+    body: "Replace sit-where-you-can chaos with planned, predictable seating. The system uses class time-tables, mapped rooms, and an internal clock to ensure any college can adopt it and students can reserve seats for every lecture without conflict.",
   },
 ]
 

@@ -5,10 +5,10 @@ import { SlideFrame } from "@/components/slide-frame"
 import { quadrants } from "@/lib/matrix-data"
 
 const shortNames: Record<string, string[]> = {
-  "keep-satisfied": ["Legal / Compliance", "Finance", "IT & Security Directors", "Regulatory Bodies"],
-  "manage-closely": ["Project Sponsor", "Operations Lead", "Lead Architect", "Support Manager"],
-  monitor: ["General Public", "Hardware Vendors", "Competitors", "Maintenance Staff"],
-  "keep-informed": ["End Users", "Front-line Staff", "Booking Partners", "Helpdesk Agents"],
+  "keep-satisfied": ["Dept Heads / Professors", "Facilities & Maintenance"],
+  "manage-closely": ["College Administration", "IT Infrastructure Team"],
+  monitor: ["External Vendors", "Campus Security"],
+  "keep-informed": ["Students", "Class Representatives"],
 }
 
 function cellFor(row: number, col: number) {

@@ -5,12 +5,12 @@ import { SlideFrame } from "@/components/slide-frame"
 
 // Six stakeholders seated around the table, each with a signature hue.
 const seats = [
-  { role: "Sponsor", color: "oklch(0.83 0.14 82)" },
-  { role: "Ops Lead", color: "oklch(0.72 0.13 220)" },
-  { role: "Architect", color: "oklch(0.7 0.15 150)" },
-  { role: "Support", color: "oklch(0.65 0.19 25)" },
-  { role: "Compliance", color: "oklch(0.7 0.16 300)" },
-  { role: "End User", color: "oklch(0.78 0.15 55)" },
+  { role: "Admin", color: "oklch(0.83 0.14 82)" },
+  { role: "IT Team", color: "oklch(0.72 0.13 220)" },
+  { role: "Dept Heads", color: "oklch(0.7 0.15 150)" },
+  { role: "Facilities", color: "oklch(0.65 0.19 25)" },
+  { role: "Students", color: "oklch(0.78 0.15 55)" },
+  { role: "CRs", color: "oklch(0.7 0.16 300)" },
 ]
 
 /**
@@ -71,9 +71,6 @@ function RoundTable() {
             onMouseEnter={() => setActive(i)}
             onFocus={() => setActive(i)}
             aria-label={s.role}
-            // The seat is anchored by its centre; the figure is stacked from a
-            // fixed baseline so every head lands exactly on the ring regardless
-            // of the label width.
             className="absolute flex flex-col items-center gap-[0.6cqh] rounded-lg p-[0.6cqh] outline-none transition-transform duration-300 ease-out focus-visible:ring-2"
             style={{
               left: `${x}%`,
@@ -133,7 +130,7 @@ export function TitleSlide() {
             style={{ animation: "fadeup 0.5s ease-out 0.16s both" }}
           >
             Stakeholder Analysis for the{" "}
-            <span className="text-card-foreground">Seat Reservation System</span> Project
+            <span className="text-card-foreground">Campus Classroom Seat Reservation System</span> Project
           </p>
 
           <div

@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Power–Interest Matrix | Seat Reservation System',
   description:
-    'Stakeholder analysis breakout activity for the Seat Reservation System project — KL University MDI&E.',
+    'Stakeholder analysis breakout activity for the Campus Classroom Seat Reservation System — a multi-tenant, BookMyShow-style seat-grid platform for university lecture halls. KL University DTIE.',
   generator: 'v0.app',
   icons: {
     icon: [

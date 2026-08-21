@@ -31,20 +31,12 @@ export const quadrants: Quadrant[] = [
     color: "oklch(0.83 0.14 82)",
     stakeholders: [
       {
-        name: "Project Sponsor / Product Owner",
-        detail: "Drives vision, budget allocation, and core decisions.",
+        name: "College Administration / Dean of Academics",
+        detail: "Owns the academic policy, approves campus-wide rollout, and defines seat-allocation rules per department.",
       },
       {
-        name: "Operations Lead / Venue Manager",
-        detail: "Oversees physical layout and seat allocations.",
-      },
-      {
-        name: "Lead Software Architect / Engineering Team",
-        detail: "Builds system features and core functionality.",
-      },
-      {
-        name: "Customer Support Manager",
-        detail: "Responsible for post-launch user issues and refunds.",
+        name: "IT Infrastructure & Campus Systems Team",
+        detail: "Hosts and maintains the platform, manages tenant onboarding for each institution, and ensures uptime during peak booking windows.",
       },
     ],
   },
@@ -60,20 +52,12 @@ export const quadrants: Quadrant[] = [
     color: "oklch(0.72 0.13 220)",
     stakeholders: [
       {
-        name: "Data Protection & Compliance Officers / Legal Team",
-        detail: "Ensures regulatory / GDPR / ADA compliance.",
+        name: "Department Heads / Professors",
+        detail: "Control which lecture halls and classrooms are open for reservation and set capacity per course.",
       },
       {
-        name: "Finance / Accounts Department",
-        detail: "Controls funding and payment gateway approvals.",
-      },
-      {
-        name: "IT Infrastructure & Cybersecurity Directors",
-        detail: "Holds authority over hosting, servers, and security protocols.",
-      },
-      {
-        name: "External Regulatory / Safety Bodies",
-        detail: "e.g. Fire Department or Local Licensing Authorities setting seat capacity limits.",
+        name: "Campus Facilities & Maintenance Staff",
+        detail: "Ensure rooms are physically ready, seats are intact, and safety limits match the digital seat map.",
       },
     ],
   },
@@ -89,20 +73,12 @@ export const quadrants: Quadrant[] = [
     color: "oklch(0.7 0.15 150)",
     stakeholders: [
       {
-        name: "End Users / Customers / Passengers",
-        detail: "Book and reserve seats directly.",
+        name: "Students (Primary Users)",
+        detail: "Browse the seat grid, reserve seats in real time, and rely on the system for every lecture.",
       },
       {
-        name: "Front-line Service Staff / Ticket Collectors / Gate Agents",
-        detail: "Check-in users and manage seats on-site.",
-      },
-      {
-        name: "Third-Party Booking Agents / Partners",
-        detail: "Sell seats through external platforms.",
-      },
-      {
-        name: "System Helpdesk / Support Agents",
-        detail: "Resolve daily user reservation queries.",
+        name: "Class Representatives (CRs)",
+        detail: "Aggregate peer feedback, flag booking conflicts, and act as the voice of the student body.",
       },
     ],
   },
@@ -118,28 +94,18 @@ export const quadrants: Quadrant[] = [
     color: "oklch(0.72 0.07 255)",
     stakeholders: [
       {
-        name: "General Public / Non-User Community",
-        detail: "Unaffected by the reservation system directly.",
+        name: "External Vendors",
+        detail: "Supply scanners, printers, or hardware spares — engaged only when infrastructure needs replenishing.",
       },
       {
-        name: "External Vendors / Hardware Suppliers",
-        detail: "Provide basic equipment like scanners or servers.",
-      },
-      {
-        name: "Competing Service Providers",
-        detail: "Keep an eye on market trends.",
-      },
-      {
-        name: "Indirect Maintenance Staff",
-        detail: "Facility cleaners, general building maintenance.",
+        name: "Campus Security",
+        detail: "Perimeter and access control; only involved if a reservation dispute escalates to a physical incident.",
       },
     ],
   },
 ]
 
 export const focusStakeholders = [
-  "Project Sponsor / Product Owner",
-  "Operations Lead / Venue Manager",
-  "Lead Software Architect / Engineering Team",
-  "Customer Support Manager",
+  "College Administration / Dean of Academics",
+  "IT Infrastructure & Campus Systems Team",
 ]

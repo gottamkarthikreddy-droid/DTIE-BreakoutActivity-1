@@ -26,7 +26,7 @@ export function FocusSlide() {
 
         {/* Spotlight rig: hovering one card lights it and dims the rest. */}
         <div
-          className="mt-[5cqh] grid grid-cols-4 gap-[2cqw]"
+          className="mt-[5cqh] grid grid-cols-2 gap-[2cqw]"
           onMouseLeave={() => setActive(null)}
         >
           {core.stakeholders.map((s, i) => {
