@@ -230,3 +230,23 @@
     transform: rotate(360deg);
   }
 }
+
+/* Slow orbit for the revolving-icons slide */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Counter-orbit keeps icons upright while their container spins */
+@keyframes counter-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

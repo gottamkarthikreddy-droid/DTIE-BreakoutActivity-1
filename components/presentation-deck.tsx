@@ -8,11 +8,13 @@ import { OverviewSlide } from "@/components/slides/overview-slide"
 import { MatrixSlide } from "@/components/slides/matrix-slide"
 import { QuadrantSlide } from "@/components/slides/quadrant-slide"
 import { FocusSlide } from "@/components/slides/focus-slide"
+import { OrbitSlide } from "@/components/slides/orbit-slide"
+import { ThankYouSlide } from "@/components/slides/thank-you-slide"
 
-// Order the quadrant slides logically: the two high-power groups first.
+// Quadrant 1 first (Keep Satisfied), then Quadrant 2 (Manage Closely), etc.
 const orderedQuadrants = [
-  quadrants.find((q) => q.id === "manage-closely")!,
   quadrants.find((q) => q.id === "keep-satisfied")!,
+  quadrants.find((q) => q.id === "manage-closely")!,
   quadrants.find((q) => q.id === "keep-informed")!,
   quadrants.find((q) => q.id === "monitor")!,
 ]
@@ -26,6 +28,8 @@ const slides = [
     node: <QuadrantSlide quadrant={q} badge={String(i + 4).padStart(2, "0")} />,
   })),
   { label: "Focus", node: <FocusSlide /> },
+  { label: "Orbit", node: <OrbitSlide /> },
+  { label: "Thank You", node: <ThankYouSlide /> },
 ]
 
 export function PresentationDeck() {

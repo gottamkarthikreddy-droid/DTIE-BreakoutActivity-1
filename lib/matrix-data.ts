@@ -1,3 +1,6 @@
+import type { LucideIcon } from "lucide-react"
+import { HardHat, Landmark, GraduationCap, ShieldCheck } from "lucide-react"
+
 export type Stakeholder = {
   name: string
   detail: string
@@ -16,6 +19,12 @@ export type Quadrant = {
   gridCol: number
   /** signature color used for this quadrant's interactive accents */
   color: string
+  /** lucide icon representing the quadrant's domain */
+  icon: LucideIcon
+  /** short label for the icon */
+  iconLabel: string
+  /** one-line importance blurb shown on the revolving-icons slide */
+  importance: string
 }
 
 export const quadrants: Quadrant[] = [
@@ -29,6 +38,9 @@ export const quadrants: Quadrant[] = [
     gridRow: 1,
     gridCol: 2,
     color: "oklch(0.83 0.14 82)",
+    icon: Landmark,
+    iconLabel: "Administration",
+    importance: "Approves rollout, defines seat-allocation policy, and keeps the platform running.",
     stakeholders: [
       {
         name: "College Administration / Dean of Academics",
@@ -50,6 +62,9 @@ export const quadrants: Quadrant[] = [
     gridRow: 1,
     gridCol: 1,
     color: "oklch(0.72 0.13 220)",
+    icon: HardHat,
+    iconLabel: "Campus Facilities",
+    importance: "Keeps rooms physically ready and ensures safety limits match the digital seat map.",
     stakeholders: [
       {
         name: "Department Heads / Professors",
@@ -71,6 +86,9 @@ export const quadrants: Quadrant[] = [
     gridRow: 2,
     gridCol: 2,
     color: "oklch(0.7 0.15 150)",
+    icon: GraduationCap,
+    iconLabel: "Students",
+    importance: "The primary users who browse the seat grid and reserve seats for every lecture.",
     stakeholders: [
       {
         name: "Students (Primary Users)",
@@ -92,6 +110,9 @@ export const quadrants: Quadrant[] = [
     gridRow: 2,
     gridCol: 1,
     color: "oklch(0.72 0.07 255)",
+    icon: ShieldCheck,
+    iconLabel: "Security",
+    importance: "Handles access control and steps in only if a reservation dispute escalates.",
     stakeholders: [
       {
         name: "External Vendors",

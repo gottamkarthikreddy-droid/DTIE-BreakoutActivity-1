@@ -37,7 +37,9 @@ function Locator({ quadrant }: { quadrant: Quadrant }) {
 
 export function QuadrantSlide({ quadrant, badge }: { quadrant: Quadrant; badge: string }) {
   const [active, setActive] = useState<number | null>(null)
+  const [iconHover, setIconHover] = useState(false)
   const c = quadrant.color
+  const Icon = quadrant.icon
 
   return (
     <SlideFrame kicker={`Quadrant ${quadrant.index}`} badge={badge}>
@@ -153,6 +155,53 @@ export function QuadrantSlide({ quadrant, badge }: { quadrant: Quadrant; badge: 
             )
           })}
         </div>
+
+        {/* Interactive domain icon below the stakeholder list */}
+        <button
+          type="button"
+          onMouseEnter={() => setIconHover(true)}
+          onMouseLeave={() => setIconHover(false)}
+          onFocus={() => setIconHover(true)}
+          onBlur={() => setIconHover(false)}
+          className="group relative flex items-center gap-[1.4cqw] self-start rounded-xl border p-[1.4cqw] outline-none transition-all duration-300"
+          style={{
+            borderColor: iconHover ? `color-mix(in oklab, ${c} 50%, transparent)` : "var(--border)",
+            background: iconHover ? `color-mix(in oklab, ${c} 10%, var(--card))` : "transparent",
+            transform: iconHover ? "translateY(-0.6cqh)" : "none",
+            boxShadow: iconHover ? `0 1.2cqh 3cqh -1cqh ${c}` : "none",
+            animation: "fadeup 0.5s ease-out 0.4s both",
+          }}
+          aria-label={quadrant.iconLabel}
+        >
+          <span
+            className="flex h-[4cqw] w-[4cqw] items-center justify-center rounded-full border-2 transition-all duration-300"
+            style={{
+              borderColor: iconHover ? c : "var(--border)",
+              background: iconHover ? `color-mix(in oklab, ${c} 18%, transparent)` : "var(--card)",
+              boxShadow: iconHover ? `0 0 2cqh ${c}` : "none",
+            }}
+          >
+            <Icon
+              className="transition-all duration-300"
+              style={{
+                width: "2cqw",
+                height: "2cqw",
+                color: iconHover ? c : "var(--muted-foreground)",
+              }}
+            />
+          </span>
+          <div className="flex flex-col">
+            <span
+              className="font-display text-[1.5cqw] font-semibold transition-colors duration-300"
+              style={{ color: iconHover ? c : "var(--card-foreground)" }}
+            >
+              {quadrant.iconLabel}
+            </span>
+            <span className="text-[1.2cqw] leading-relaxed text-muted-foreground">
+              {quadrant.importance}
+            </span>
+          </div>
+        </button>
       </div>
     </SlideFrame>
   )
