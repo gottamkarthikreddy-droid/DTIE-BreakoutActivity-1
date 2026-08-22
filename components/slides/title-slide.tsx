@@ -139,7 +139,7 @@ export function TitleSlide() {
           >
             <div className="h-[0.4cqh] w-[8cqw] rounded-full bg-primary" aria-hidden="true" />
             <span className="font-display text-[1.3cqw] uppercase tracking-[0.2em] text-muted-foreground">
-              Group 1 - 2620030024 2620030056 26200300109 2620080049 2620080080 2620080081
+              Group 1 - 2620030024 2620030056 2620030109 2620080049 2620080080 2620080081
             </span>
           </div>
         </div>

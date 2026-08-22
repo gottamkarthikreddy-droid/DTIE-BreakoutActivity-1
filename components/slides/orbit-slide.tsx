@@ -13,10 +13,11 @@ const orbitOrder = [
 
 export function OrbitSlide() {
   const [active, setActive] = useState<number | null>(null)
-  const radius = 30 // percent from centre
+  const radius = 31
+   // percent from centre
 
   return (
-    <SlideFrame kicker="Stakeholder Orbit" badge="09">
+    <SlideFrame kicker="Why they matter" badge="09">
       <div className="flex h-full items-center gap-[4cqw]">
         {/* Left: revolving icons */}
         <div className="flex flex-1 items-center justify-center">
@@ -39,51 +40,57 @@ export function OrbitSlide() {
                 const Icon = q.icon
                 const isActive = active === i
                 return (
-                  <button
+                  <div
                     key={q.id}
-                    type="button"
-                    onMouseEnter={() => setActive(i)}
-                    onFocus={() => setActive(i)}
-                    aria-label={q.iconLabel}
-                    className="absolute flex flex-col items-center gap-[0.5cqh] outline-none"
+                    className="absolute"
                     style={{
                       left: `${x}%`,
                       top: `${y}%`,
                       transform: "translate(-50%, -50%)",
                     }}
                   >
-                    {/* counter-rotate to keep icon upright */}
-                    <span
-                      className="flex items-center justify-center rounded-full border-2 transition-all duration-300"
-                      style={{
-                        width: "6cqh",
-                        height: "6cqh",
-                        borderColor: isActive ? q.color : "var(--border)",
-                        background: isActive
-                          ? `color-mix(in oklab, ${q.color} 20%, var(--card))`
-                          : "var(--card)",
-                        boxShadow: isActive ? `0 0 3cqh ${q.color}` : "none",
-                        animation: "counter-orbit 30s linear infinite",
-                      }}
-                    >
-                      <Icon
-                        style={{
-                          width: "3cqh",
-                          height: "3cqh",
-                          color: isActive ? q.color : "var(--muted-foreground)",
-                        }}
-                      />
-                    </span>
-                    <span
-                      className="whitespace-nowrap font-display text-[1.1cqh] font-medium tracking-wide transition-colors duration-300"
-                      style={{
-                        color: isActive ? q.color : "var(--muted-foreground)",
-                        animation: "counter-orbit 30s linear infinite",
-                      }}
-                    >
-                      {q.iconLabel}
-                    </span>
-                  </button>
+                    {/* Counter-rotate wrapper to keep items upright while container spins */}
+                    <div style={{ animation: "counter-orbit 30s linear infinite" }}>
+                      <button
+                        type="button"
+                        onMouseEnter={() => setActive(i)}
+                        onFocus={() => setActive(i)}
+                        aria-label={q.iconLabel}
+                        className="flex flex-col items-center gap-[0.5cqh] outline-none cursor-pointer"
+                      >
+                        {/* icon circle */}
+                        <span
+                          className="flex items-center justify-center rounded-full border-2 transition-all duration-300"
+                          style={{
+                            width: "6cqh",
+                            height: "6cqh",
+                            borderColor: isActive ? q.color : "var(--border)",
+                            background: isActive
+                              ? `color-mix(in oklab, ${q.color} 20%, var(--card))`
+                              : "var(--card)",
+                            boxShadow: isActive ? `0 0 3cqh ${q.color}` : "none",
+                          }}
+                        >
+                          <Icon
+                            style={{
+                              width: "3cqh",
+                              height: "3cqh",
+                              color: isActive ? q.color : "var(--muted-foreground)",
+                            }}
+                          />
+                        </span>
+                        {/* text label */}
+                        <span
+                          className="whitespace-nowrap font-display text-[1.1cqh] font-medium tracking-wide transition-colors duration-300"
+                          style={{
+                            color: isActive ? q.color : "var(--muted-foreground)",
+                          }}
+                        >
+                          {q.iconLabel}
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                 )
               })}
             </div>
@@ -113,7 +120,7 @@ export function OrbitSlide() {
                 <div
                   key={q.id}
                   onMouseEnter={() => setActive(i)}
-                  className="flex items-start gap-[1.4cqw] transition-all duration-300"
+                  className="flex items-start gap-[1.4cqw] transition-all duration-300 cursor-pointer"
                   style={{
                     opacity: active === null || isActive ? 1 : 0.35,
                     animation: `fadeup 0.45s ease-out ${0.15 + i * 0.1}s both`,

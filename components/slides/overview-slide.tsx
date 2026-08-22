@@ -6,15 +6,15 @@ import { SlideFrame } from "@/components/slide-frame"
 const points = [
   {
     title: "The Project",
-    body: "A campus-wide classroom seat-reservation system — a BookMyShow-style seat grid for university lecture halls and classrooms. Students browse a live seat map, pick their seat, and reserve it in real time, moving from first-come-first-serve to first-book-first-serve.",
+    body: "A campus-wide classroom seat-reservation system — a Cinema-theatre styled seat grid for university lecture halls and classrooms. Students browse a live seat map, pick their seat, and reserve it in real time, giving them the liberty to sit where they want.",
   },
   {
     title: "The Platform",
-    body: "Built as a universal, multi-tenant platform. Representative institutions like Jindal or KLU register their own campus, and a designated representative maps out lecture halls and classrooms with an easy-to-use room-allotment tool — each campus runs its own branch.",
+    body: "Built as a universal platform. Any institution can adopt the platform and configure it for their own usability with the inbuilt 'seating mapper' tool. The tool is intuitive and allows exponential scalability not limited by its functionality. The tools capability to be used in various scenarios is one of its key features.",
   },
   {
     title: "The Goal",
-    body: "Replace sit-where-you-can chaos with planned, predictable seating. The system uses class time-tables, mapped rooms, and an internal clock to ensure any college can adopt it and students can reserve seats for every lecture without conflict.",
+    body: "Implementation of a controlled system combined with multi-platform support across all institutions.",
   },
 ]
 
@@ -41,7 +41,7 @@ export function OverviewSlide() {
           <div className="relative grid grid-cols-3">
             {/* track: sits at the vertical centre of the node dots */}
             <div
-              className="absolute left-[16.66%] right-[16.66%] top-[2.4cqw] h-[0.4cqh] -translate-y-1/2 rounded-full bg-border"
+              className="absolute left-[16.66%] right-[16.66%] top-[2.0cqw] h-[0.4cqh] -translate-y-1/2 rounded-full bg-border"
               aria-hidden="true"
             >
               <div

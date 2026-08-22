@@ -6,7 +6,7 @@ import { Heart } from "lucide-react"
 const members = [
   { roll: "2620030024", gender: "male" as const },
   { roll: "2620030056", gender: "male" as const },
-  { roll: "26200300109", gender: "male" as const },
+  { roll: "2620030109", gender: "male" as const },
   { roll: "2620080049", gender: "female" as const },
   { roll: "2620080080", gender: "female" as const },
   { roll: "2620080081", gender: "female" as const },
@@ -96,7 +96,7 @@ export function ThankYouSlide() {
         >
           <div className="h-[0.3cqh] w-[4cqw] rounded-full bg-primary" aria-hidden="true" />
           <span className="font-display text-[1.2cqw] uppercase tracking-[0.2em] text-muted-foreground">
-            Made by Group 1 · KL University DTIE
+            Made by Group 1 · KLH University DTIE
           </span>
           <div className="h-[0.3cqh] w-[4cqw] rounded-full bg-primary" aria-hidden="true" />
         </div>
