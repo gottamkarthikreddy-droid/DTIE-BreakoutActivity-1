@@ -122,7 +122,7 @@ export function TitleSlide() {
             className="mt-[3cqh] text-balance font-display text-[6cqw] font-bold leading-[1.02] tracking-tight text-card-foreground"
             style={{ animation: "fadeup 0.5s ease-out 0.08s both" }}
           >
-            Power–Interest Matrixgg
+            Power–Interest Matrix
           </h1>
 
           <p
